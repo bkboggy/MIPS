@@ -16,7 +16,7 @@
 module I_FETCH_tb;
 	// Delclare inputs.
 	reg clk;
-	reg PC_Src;
+	reg PCSrc;
 	reg [31:0] EX_MEM_NPC;
 
 	// Declare outputs.
@@ -27,13 +27,13 @@ module I_FETCH_tb;
 	reg [4:0] clk_cycle;
 
 	// Instantiate the FETCH stage module.
-	I_FETCH fetch(.clk(clk), .PC_Src(PC_Src), .EX_MEM_NPC(EX_MEM_NPC), 
+	I_FETCH fetch(.clk(clk), .PCSrc(PCSrc), .EX_MEM_NPC(EX_MEM_NPC), 
 		.IF_ID_IR(IF_ID_IR), .IF_ID_NPC(IF_ID_NPC));
 
 	initial begin
 		// Initialize inputs.
 		clk = 0;
-		PC_Src = 0;
+		PCSrc = 0;
 		EX_MEM_NPC = 0;
 		
 		// Initialize clock cycle counter.
