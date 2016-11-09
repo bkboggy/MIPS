@@ -21,18 +21,18 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "D:/CSE401/Lab4/MIPS/D_MEM.v";
-static unsigned int ng1[] = {0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U};
+static const char *ng0 = "D:/CSE401/Lab6/MIPS/D_MEM.v";
+static unsigned int ng1[] = {0U, 0U};
 static int ng2[] = {0, 0};
-static unsigned int ng3[] = {1U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U};
+static unsigned int ng3[] = {1U, 0U};
 static int ng4[] = {1, 0};
-static unsigned int ng5[] = {2U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U};
+static unsigned int ng5[] = {2U, 0U};
 static int ng6[] = {2, 0};
-static unsigned int ng7[] = {3U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U};
+static unsigned int ng7[] = {3U, 0U};
 static int ng8[] = {3, 0};
-static unsigned int ng9[] = {4U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U};
+static unsigned int ng9[] = {4U, 0U};
 static int ng10[] = {4, 0};
-static unsigned int ng11[] = {5U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U};
+static unsigned int ng11[] = {5U, 0U};
 static int ng12[] = {5, 0};
 
 
@@ -238,7 +238,7 @@ LAB13:    t19 = *((unsigned int *)t3);
 
 static void Always_33_1(char *t0)
 {
-    char t7[40];
+    char t7[8];
     char *t1;
     char *t2;
     char *t3;
@@ -283,7 +283,7 @@ LAB5:    xsi_set_current_line(35, ng0);
     t13 = *((char **)t12);
     t14 = (t0 + 1528U);
     t15 = *((char **)t14);
-    xsi_vlog_generic_get_array_select_value(t7, 129, t6, t10, t13, 2, 1, t15, 32, 2);
+    xsi_vlog_generic_get_array_select_value(t7, 32, t6, t10, t13, 2, 1, t15, 32, 2);
     t14 = (t0 + 2088);
     xsi_vlogvar_wait_assign_value(t14, t7, 0, 0, 32, 0LL);
     goto LAB2;
@@ -292,33 +292,31 @@ LAB5:    xsi_set_current_line(35, ng0);
 
 static void Always_39_2(char *t0)
 {
-    char t6[40];
-    char t8[8];
-    char t9[8];
+    char t6[8];
+    char t7[8];
     char *t1;
     char *t2;
     char *t3;
     char *t4;
     char *t5;
-    char *t7;
+    char *t8;
+    char *t9;
     char *t10;
     char *t11;
     char *t12;
     char *t13;
     char *t14;
     char *t15;
-    char *t16;
-    char *t17;
-    unsigned int t18;
-    int t19;
-    char *t20;
-    unsigned int t21;
-    int t22;
-    int t23;
-    unsigned int t24;
-    unsigned int t25;
-    int t26;
-    int t27;
+    unsigned int t16;
+    int t17;
+    char *t18;
+    unsigned int t19;
+    int t20;
+    int t21;
+    unsigned int t22;
+    unsigned int t23;
+    int t24;
+    int t25;
 
 LAB0:    t1 = (t0 + 3824U);
     t2 = *((char **)t1);
@@ -340,36 +338,33 @@ LAB4:    xsi_set_current_line(40, ng0);
 LAB5:    xsi_set_current_line(41, ng0);
     t4 = (t0 + 1688U);
     t5 = *((char **)t4);
-    memcpy(t6, t5, 8);
-    t4 = (t6 + 8);
-    memset(t4, 0, 32);
-    t7 = (t0 + 2248);
-    t10 = (t0 + 2248);
-    t11 = (t10 + 72U);
-    t12 = *((char **)t11);
-    t13 = (t0 + 2248);
-    t14 = (t13 + 64U);
+    t4 = (t0 + 2248);
+    t8 = (t0 + 2248);
+    t9 = (t8 + 72U);
+    t10 = *((char **)t9);
+    t11 = (t0 + 2248);
+    t12 = (t11 + 64U);
+    t13 = *((char **)t12);
+    t14 = (t0 + 1528U);
     t15 = *((char **)t14);
-    t16 = (t0 + 1528U);
-    t17 = *((char **)t16);
-    xsi_vlog_generic_convert_array_indices(t8, t9, t12, t15, 2, 1, t17, 32, 2);
-    t16 = (t8 + 4);
-    t18 = *((unsigned int *)t16);
-    t19 = (!(t18));
-    t20 = (t9 + 4);
-    t21 = *((unsigned int *)t20);
-    t22 = (!(t21));
-    t23 = (t19 && t22);
-    if (t23 == 1)
+    xsi_vlog_generic_convert_array_indices(t6, t7, t10, t13, 2, 1, t15, 32, 2);
+    t14 = (t6 + 4);
+    t16 = *((unsigned int *)t14);
+    t17 = (!(t16));
+    t18 = (t7 + 4);
+    t19 = *((unsigned int *)t18);
+    t20 = (!(t19));
+    t21 = (t17 && t20);
+    if (t21 == 1)
         goto LAB6;
 
 LAB7:    goto LAB2;
 
-LAB6:    t24 = *((unsigned int *)t8);
-    t25 = *((unsigned int *)t9);
-    t26 = (t24 - t25);
-    t27 = (t26 + 1);
-    xsi_vlogvar_wait_assign_value(t7, t6, 0, *((unsigned int *)t9), t27, 0LL);
+LAB6:    t22 = *((unsigned int *)t6);
+    t23 = *((unsigned int *)t7);
+    t24 = (t22 - t23);
+    t25 = (t24 + 1);
+    xsi_vlogvar_wait_assign_value(t4, t5, 0, *((unsigned int *)t7), t25, 0LL);
     goto LAB7;
 
 }
