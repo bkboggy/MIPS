@@ -17,7 +17,7 @@
 module D_MEM(input clk, MemWrite, MemRead, input [31:0] Address, Write_data, 
 	output reg [31:0] Read_data);
 	
-	reg [128:0] MEM [31:0];
+	reg [31:0] MEM [128:0];
 	
 	initial
 		begin
@@ -30,7 +30,7 @@ module D_MEM(input clk, MemWrite, MemRead, input [31:0] Address, Write_data,
 		end
 	
 	// Get data from the specified address.
-	always @ (MemRead)
+	always @ *//(MemRead)
 		begin
 			Read_data <= MEM[Address];
 		end

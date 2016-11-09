@@ -24,18 +24,17 @@ module PIPELINE_tb;
 
 	initial begin
 		// Initialize Inputs
-		clk = 0;
-		
+		clk = 0;		
 		// Wait for initialization
 		#100;
 		// Perform 24 cycles.
-		#480;
-		$finish;
+		//#480;
+		//$finish;
 	end
 	
 	initial begin
+		// Wait for initialization
 		#100;
-		$monitor("");
 		forever begin
 			#10 clk = ~clk;
 		end
