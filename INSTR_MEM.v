@@ -3,6 +3,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 // Company:       California State University San Bernardino
 // Engineer:		Bogdan Kravtsov
+//                Tyler Clayton
 //
 // Create Date:   14:20:02 10/03/2016
 // Module Name:   INSTR_MEM
