@@ -21,7 +21,7 @@ module REG(input clk, regwrite, input [4:0] rs, rt, rd, input [31:0] writedata,
 	
 	// Initialize memory.
 	initial begin
-		GP_REG[0] <= 32'h00000000;
+		GP_REG[0] <= 32'h00000000; // $zero register
 	end
 		
 	// Get the values at the specified addresses

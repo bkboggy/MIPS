@@ -31,7 +31,7 @@ module ALU(input [31:0] A, B, input [2:0] control, output reg zero,
 			3'b111:
 				result <= (A < B) ? 1 : 0;	
 			3'b011:
-				result <= 32'bx;
+				result <= 32'bxxxxxxxx;
 		endcase
 		zero <= result ? 0 : 1;
 	end

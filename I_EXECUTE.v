@@ -36,10 +36,10 @@ module I_EXECUTE(
 	// Wires.				  
 	wire [31:0] add_out_wire;
 	wire [31:0] alu_mux_out_wire;
-	wire [2:0]  alu_control_out_wire; 
+	wire [2:0]  alu_control_out_wire;
 	wire        alu_zero_wire;
-	wire [31:0] alu_result_wire;  
-	wire [4:0]  bottom_mux_out_wire;	
+	wire [31:0] alu_result_wire;
+	wire [4:0]  bottom_mux_out_wire;
 		
 	// Instantiate modules.
 	ADDER adder(.add_in1(NPC), .add_in2(IR), .add_out(add_out_wire));	
@@ -52,7 +52,7 @@ module I_EXECUTE(
 	ALU_CONTROL alu_control(.funct(IR[5:0]), .alu_op(EX[2:1]), 
 		.select(alu_control_out_wire));	
 		
-	BOTTOM_MUX bottom_mux(.a(IR[15:11]), .b(IR[20:16]), .sel(EX[3]), 
+	BOTTOM_MUX bottom_mux(.a(instrout_1511), .b(instrout_2016), .sel(EX[3]), 
 		.y(bottom_mux_out_wire));			
 		
 	EX_MEM ex_mem(.clk(clk), .ctlwb_out(WB), .ctlm_out(M), 
