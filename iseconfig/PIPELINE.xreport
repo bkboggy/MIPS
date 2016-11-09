@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2016-11-07T14:13:10</DateModified>
+  <DateModified>2016-11-08T18:58:24</DateModified>
   <ModuleName>PIPELINE</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
-  <SavedFilePath>D:/CSE401/Lab4/MIPS/iseconfig/PIPELINE.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>D:/CSE401/Lab4/MIPS\</ImplementationReportsDirectory>
+  <SavedFilePath>D:/CSE401/Lab6/MIPS/iseconfig/PIPELINE.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>D:/CSE401/Lab6/MIPS\</ImplementationReportsDirectory>
   <DateInitialized>2016-10-17T10:35:48</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
