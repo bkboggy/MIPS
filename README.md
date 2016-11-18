@@ -1,5 +1,5 @@
 # MIPS
-MIPS pipeline implementation in Verilog using Xilinx ISE.
+MIPS pipeline implementation in Verilog using Xilinx ISE.  Instructions and data were statically initialized for testing purposes.
 
 ## MIPS Pipeline
 <img src="https://github.com/bkboggy/MIPS/blob/master/readme_images/pipeline.JPG" alt="Pipeline">
