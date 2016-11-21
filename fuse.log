@@ -1,66 +1,20 @@
-Running: fuse.exe -relaunch -intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "D:/CSE401/Lab6/MIPS/PIPELINE_tb_isim_beh.exe" -prj "D:/CSE401/Lab6/MIPS/PIPELINE_tb_beh.prj" "work.PIPELINE_tb" "work.glbl" 
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o D:/CSE401/Lab6/MIPS/MEM_WB_tb_isim_beh.exe -prj D:/CSE401/Lab6/MIPS/MEM_WB_tb_beh.prj work.MEM_WB_tb work.glbl 
 ISim P.20131013 (signature 0x7708f090)
 Number of CPUs detected in this system: 4
 Turning on mult-threading, number of parallel sub-compilation jobs: 8 
 Determining compilation order of HDL files
-Analyzing Verilog file "D:/CSE401/Lab6/MIPS/S_EXTEND.v" into library work
-Analyzing Verilog file "D:/CSE401/Lab6/MIPS/REG.v" into library work
-Analyzing Verilog file "D:/CSE401/Lab6/MIPS/PC.v" into library work
-Analyzing Verilog file "D:/CSE401/Lab6/MIPS/MUX.v" into library work
 Analyzing Verilog file "D:/CSE401/Lab6/MIPS/MEM_WB.v" into library work
-Analyzing Verilog file "D:/CSE401/Lab6/MIPS/INSTR_MEM.v" into library work
-Analyzing Verilog file "D:/CSE401/Lab6/MIPS/INCR.v" into library work
-Analyzing Verilog file "D:/CSE401/Lab6/MIPS/IF_ID.v" into library work
-Analyzing Verilog file "D:/CSE401/Lab6/MIPS/ID_EX.v" into library work
-Analyzing Verilog file "D:/CSE401/Lab6/MIPS/EX_MEM.v" into library work
-Analyzing Verilog file "D:/CSE401/Lab6/MIPS/D_MEM.v" into library work
-Analyzing Verilog file "D:/CSE401/Lab6/MIPS/CONTROL.v" into library work
-Analyzing Verilog file "D:/CSE401/Lab6/MIPS/BOTTOM_MUX.v" into library work
-Analyzing Verilog file "D:/CSE401/Lab6/MIPS/AND_Gate.v" into library work
-Analyzing Verilog file "D:/CSE401/Lab6/MIPS/ALU_MUX.v" into library work
-Analyzing Verilog file "D:/CSE401/Lab6/MIPS/ALU_CONTROL.v" into library work
-Analyzing Verilog file "D:/CSE401/Lab6/MIPS/ALU.v" into library work
-Analyzing Verilog file "D:/CSE401/Lab6/MIPS/ADDER.v" into library work
-Analyzing Verilog file "D:/CSE401/Lab6/MIPS/WB.v" into library work
-Analyzing Verilog file "D:/CSE401/Lab6/MIPS/MEM.v" into library work
-Analyzing Verilog file "D:/CSE401/Lab6/MIPS/I_FETCH.v" into library work
-Analyzing Verilog file "D:/CSE401/Lab6/MIPS/I_EXECUTE.v" into library work
-Analyzing Verilog file "D:/CSE401/Lab6/MIPS/I_DECODE.v" into library work
-Analyzing Verilog file "D:/CSE401/Lab6/MIPS/PIPELINE.v" into library work
-Analyzing Verilog file "D:/CSE401/Lab6/MIPS/PIPELINE_tb.v" into library work
+Analyzing Verilog file "D:/CSE401/Lab6/MIPS/MEM_WB_tb.v" into library work
 Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
 Starting static elaboration
 Completed static elaboration
-Compiling module MUX
-Compiling module PC
-Compiling module INSTR_MEM
-Compiling module INCR
-Compiling module IF_ID
-Compiling module I_FETCH
-Compiling module CONTROL
-Compiling module REG
-Compiling module S_EXTEND
-Compiling module ID_EX
-Compiling module I_DECODE
-Compiling module ADDER
-Compiling module ALU_MUX
-Compiling module ALU
-Compiling module ALU_CONTROL
-Compiling module BOTTOM_MUX
-Compiling module EX_MEM
-Compiling module I_EXECUTE
-Compiling module D_MEM
 Compiling module MEM_WB
-Compiling module AND_Gate
-Compiling module MEM
-Compiling module WB
-Compiling module PIPELINE
-Compiling module PIPELINE_tb
+Compiling module MEM_WB_tb
 Compiling module glbl
 Time Resolution for simulation is 1ps.
 Waiting for 1 sub-compilation(s) to finish...
-WARNING:Simulator - Unable to copy libPortabilityNOSH.dll to the simulation executable directory: boost::filesystem::copy_file: The system cannot find the path specified, "isim\PIPELINE_tb_isim_beh.exe.sim\libPortability.dll".
-Compiled 26 Verilog Units
-Built simulation executable D:/CSE401/Lab6/MIPS/PIPELINE_tb_isim_beh.exe
-Fuse Memory Usage: 27756 KB
-Fuse CPU Usage: 436 ms
+WARNING:Simulator - Unable to copy libPortabilityNOSH.dll to the simulation executable directory: boost::filesystem::copy_file: The system cannot find the path specified, "isim\MEM_WB_tb_isim_beh.exe.sim\libPortability.dll".
+Compiled 3 Verilog Units
+Built simulation executable D:/CSE401/Lab6/MIPS/MEM_WB_tb_isim_beh.exe
+Fuse Memory Usage: 26680 KB
+Fuse CPU Usage: 327 ms
