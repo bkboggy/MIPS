@@ -27,7 +27,13 @@ module I_DECODE(
 	output [31:0] rdata2out,
 	output [31:0] IR,
 	output [4:0]  instrout_2016,
-	output [4:0]  instrout_1511);
+	output [4:0]  instrout_1511,
+	
+	// Forwarding
+	// ---------------------------
+	output [4:0]  instrout_2521
+	// ---------------------------
+	);
 	
 	// Wires
 	wire [1:0]  CTL_WB_wire;
@@ -53,8 +59,9 @@ module I_DECODE(
 		.ctlex_out(CTL_EX_wire), .npc(IF_ID_NPC), .readdat1(REG_A_wire), 
 		.readdat2(REG_B_wire), .signext_out(EXT_OUT_wire), 
 		.instr_2016(IF_ID_Instr[20:16]), .instr_1511(IF_ID_Instr[15:11]), 
+		.instr_2521(IF_ID_Instr[25:21]),
 		.wb_ctlout(WB), .m_ctlout(M),
 		.ex_ctlout(EX), .npcout(NPC), .rdata1out(rdata1out), 
 		.rdata2out(rdata2out), .s_extendout(IR), .instrout_2016(instrout_2016), 
-		.instrout_1511(instrout_1511));
+		.instrout_1511(instrout_1511), .instrout_2521(instrout_2521));
 endmodule

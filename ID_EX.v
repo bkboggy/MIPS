@@ -25,7 +25,14 @@ module ID_EX(
 	output reg [2:0]  m_ctlout,
 	output reg [3:0]  ex_ctlout,
 	output reg [31:0] npcout, rdata1out, rdata2out, s_extendout,
-	output reg [4:0]  instrout_2016, instrout_1511);
+	output reg [4:0]  instrout_2016, instrout_1511,
+	
+	// Forwarding
+	// ---------------------------
+	input      [4:0]  instr_2521,
+	output reg [4:0]  instrout_2521
+	// ---------------------------
+	);
 	
 	// Inititalize
 	initial
@@ -39,6 +46,8 @@ module ID_EX(
 			s_extendout   <= 0;
 			instrout_2016 <= 0;
 			instrout_1511 <= 0;
+			// Forwarding
+			instrout_2521 <= 0;
 		end
 		
 	// Update
@@ -53,5 +62,7 @@ module ID_EX(
 			s_extendout   <= signext_out;
 			instrout_2016 <= instr_2016;
 			instrout_1511 <= instr_1511;
+			// Forwarding
+			instrout_2521 <= instr_2521;
 		end
 endmodule
