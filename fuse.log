@@ -1,7 +1,7 @@
 Running: fuse.exe -relaunch -intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "D:/CSE401/Hazards/MIPS/PIPELINE_tb_isim_beh.exe" -prj "D:/CSE401/Hazards/MIPS/PIPELINE_tb_beh.prj" "work.PIPELINE_tb" "work.glbl" 
 ISim P.20131013 (signature 0x7708f090)
-Number of CPUs detected in this system: 4
-Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Number of CPUs detected in this system: 8
+Turning on mult-threading, number of parallel sub-compilation jobs: 16 
 Determining compilation order of HDL files
 Analyzing Verilog file "D:/CSE401/Hazards/MIPS/THREE_ONE_MUX.v" into library work
 Analyzing Verilog file "D:/CSE401/Hazards/MIPS/S_EXTEND.v" into library work
@@ -62,9 +62,7 @@ Compiling module PIPELINE
 Compiling module PIPELINE_tb
 Compiling module glbl
 Time Resolution for simulation is 1ps.
-Waiting for 1 sub-compilation(s) to finish...
-WARNING:Simulator - Unable to copy libPortabilityNOSH.dll to the simulation executable directory: boost::filesystem::copy_file: The system cannot find the path specified, "isim\PIPELINE_tb_isim_beh.exe.sim\libPortability.dll".
 Compiled 28 Verilog Units
 Built simulation executable D:/CSE401/Hazards/MIPS/PIPELINE_tb_isim_beh.exe
-Fuse Memory Usage: 28360 KB
-Fuse CPU Usage: 561 ms
+Fuse Memory Usage: 27692 KB
+Fuse CPU Usage: 889 ms

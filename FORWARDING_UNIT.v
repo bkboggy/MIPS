@@ -30,27 +30,20 @@ module FORWARDING_UNIT(
 
 	
 	always @ * begin
+		forward_a_sel <= 2'b00;
+		forward_b_sel <= 2'b00;
+		
 		// EX Hazard
 		if (ex_mem_wb[1] && 
-		    (five_bit_mux_out != 0) && 
-			 (five_bit_mux_out == rs)) 
+		    (five_bit_mux_out != 0) && (five_bit_mux_out == rs)) 
 			begin
 				forward_a_sel <= 2'b10;
 			end
-		else 
-			begin
-				forward_a_sel <= 2'b00;
-			end
 		 
 		if (ex_mem_wb[1] && 
-		    (five_bit_mux_out != 0) && 
-			 (five_bit_mux_out == rt)) 
+		    (five_bit_mux_out != 0) && (five_bit_mux_out == rt)) 
 			begin
 				forward_b_sel <= 2'b10;
-			end
-		else 
-			begin
-				forward_b_sel <= 2'b00;
 			end
 	
 		// MEM Hazard
@@ -60,21 +53,12 @@ module FORWARDING_UNIT(
 			begin
 				forward_a_sel <= 2'b01;
 			end
-		else 
-			begin
-				forward_a_sel <= 2'b00;
-			end
 		 
 		if (mem_wb_wb[1] && (mem_Write_reg != 0) && 
-		    !(ex_mem_wb[1] && (five_bit_mux_out != 0) && 
-			 (five_bit_mux_out != rt)) && 
+		    !(ex_mem_wb[1] && (five_bit_mux_out != 0) && (five_bit_mux_out != rt)) && 
 			 (mem_Write_reg == rt)) 
 			begin
 				forward_b_sel <= 2'b01;
-			end
-		else 
-			begin
-				forward_b_sel <= 2'b00;
 			end
 	end						  
 endmodule
