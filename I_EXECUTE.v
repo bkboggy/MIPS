@@ -28,14 +28,10 @@ module I_EXECUTE(
 	
 	// Forwarding
 	// ---------------------------
-	input  [4:0]  instrout_2521,
 	input  [1:0]  forward_a_sel,
 	input  [1:0]  forward_b_sel,
 	input  [31:0] wb_data,
 	input  [31:0] mem_alu_result,
-	
-	output [4:0]  rt,
-	output [4:0]  rs,
 	// ---------------------------
 	
 	output [1:0]  wb_ctlout,
@@ -57,31 +53,63 @@ module I_EXECUTE(
 	wire [31:0] forward_mux_a_out_wire;
 		
 	// Instantiate modules.
-	ADDER adder(.add_in1(NPC), .add_in2(IR), .add_out(add_out_wire));	
+	ADDER adder(
+		.add_in1(NPC), 
+		.add_in2(IR), 
+		.add_out(add_out_wire));	
 	
-	ALU_MUX alu_mux(.a(IR), .b(rdata2in), .sel(EX[0]), .y(alu_mux_out_wire));
+	ALU_MUX alu_mux(
+		.a(IR), 
+		.b(forward_mux_b_out_wire), 
+		.sel(EX[0]), 
+		.y(alu_mux_out_wire));
 	
-	ALU alu(.A(forward_mux_a_out_wire), .B(forward_mux_b_out_wire), .control(alu_control_out_wire), 
-		.zero(alu_zero_wire), .result(alu_result_wire));	
+	ALU alu(
+		.A(forward_mux_a_out_wire), 
+		.B(alu_mux_out_wire), 
+		.control(alu_control_out_wire), 
+		.zero(alu_zero_wire), 
+		.result(alu_result_wire));	
 		
-	ALU_CONTROL alu_control(.funct(IR[5:0]), .alu_op(EX[2:1]), 
+	ALU_CONTROL alu_control(
+		.funct(IR[5:0]), 
+		.alu_op(EX[2:1]), 
 		.select(alu_control_out_wire));	
 		
-	BOTTOM_MUX bottom_mux(.a(instrout_1511), .b(instrout_2016), .sel(EX[3]), 
+	BOTTOM_MUX bottom_mux(
+		.a(instrout_1511), 
+		.b(instrout_2016), 
+		.sel(EX[3]), 
 		.y(bottom_mux_out_wire));			
 		
-	EX_MEM ex_mem(.clk(clk), .ctlwb_out(WB), .ctlm_out(M), 
-		.adder_out(add_out_wire), .aluzero(alu_zero_wire), .aluout(alu_result_wire), 
-		.readdat2(rdata2in), .muxout(bottom_mux_out_wire), 
-		.wb_ctlout(wb_ctlout), .m_ctlout(m_ctlout), .add_result(add_result), 
-		.zero(zero), .alu_result(alu_result), .rdata2out(rdata2out), 
+	EX_MEM ex_mem(
+		.clk(clk), 
+		.ctlwb_out(WB), 
+		.ctlm_out(M), 
+		.adder_out(add_out_wire), 
+		.aluzero(alu_zero_wire), 
+		.aluout(alu_result_wire), 
+		.readdat2(forward_mux_b_out_wire), 
+		.muxout(bottom_mux_out_wire), 
+		.wb_ctlout(wb_ctlout), 
+		.m_ctlout(m_ctlout), 
+		.add_result(add_result), 
+		.zero(zero), 
+		.alu_result(alu_result), 
+		.rdata2out(rdata2out), 
 		.five_bit_muxout(five_bit_muxout));
-		
-	// Forwarding
-	assign rs = instrout_2521;
-	assign rt = instrout_2016;
 	
-	THREE_ONE_MUX FORWARD_MUX_A(.a(mem_alu_result), .b(wb_data), .c(rdata1in), .sel(forward_a_sel), .y(forward_mux_a_out_wire));
+	THREE_ONE_MUX FORWARD_MUX_A(
+		.a(mem_alu_result), 
+		.b(wb_data), 
+		.c(rdata1in), 
+		.sel(forward_a_sel), 
+		.y(forward_mux_a_out_wire));
 	
-	THREE_ONE_MUX FORWARD_MUX_B(.a(mem_alu_result), .b(wb_data), .c(alu_mux_out_wire), .sel(forward_b_sel), .y(forward_mux_b_out_wire));
+	THREE_ONE_MUX FORWARD_MUX_B(
+		.a(mem_alu_result), 
+		.b(wb_data), 
+		.c(rdata2in), 
+		.sel(forward_b_sel), 
+		.y(forward_mux_b_out_wire));
 endmodule
