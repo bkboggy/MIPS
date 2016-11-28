@@ -20,7 +20,7 @@ module INSTR_MEM(input clk, input [31:0] addr, output reg [31:0] data);
 	
 	// Initialize memory.
 	initial begin
-		/* SET 1 - Using NOPs to mitigate data hazards.
+		/* SET 1 - Using NOPs to mitigate data hazards. 
 		MEM[0]  <= 32'b100011_00000_00001_0000_0000_0000_0001;  // LW r1 , 1(r0)
 		MEM[1]  <= 32'b100011_00000_00010_0000_0000_0000_0010;  // LW r2 , 2(r0)
 		MEM[2]  <= 32'b100011_00000_00011_0000_0000_0000_0011;  // LW r3 , 3(r0)
@@ -66,7 +66,9 @@ module INSTR_MEM(input clk, input [31:0] addr, output reg [31:0] data);
 		MEM[4]  <= 32'b000000_00001_00001_00001_00000_100000;   // ADD r1, r1, r1
 		MEM[5]  <= 32'b1000_0000_0000_0000_0000_0000_0000_0000; // NOP
 		MEM[6]  <= 32'b000000_00001_00010_00010_00000_100000;   // ADD r2, r1, r2
+		//MEM[7]  <= 32'b1000_0000_0000_0000_0000_0000_0000_0000; // NOP
 		MEM[7]  <= 32'b000000_00010_00010_00011_00000_100000;   // ADD r3, r2, r2
+		
 	end
 
    // Assign the contents at the requested memory address to data.
